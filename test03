@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ "$(echo $1|grep '*')" = "" ]; then 
+	echo "phai co ky tu * trong $1"
+else 
+	echo "khong duoc co ky tu * trong $1"
+fi
+
+
+

@@ -1,0 +1,11 @@
+#!/bin/bash 
+if [ -f $1 ];
+then
+   echo "$1 file exist"
+else
+   clear;
+   echo "Sorry, $1 file does not exist OR you type wrong filename"
+   echo "Cach su dung:  Go ./test02 file_name_can_kiem_tra."
+fi
+
+

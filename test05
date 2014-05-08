@@ -1,0 +1,20 @@
+#!/bin/bash
+case $1 in
+--clear) clear;;
+--listfile) ls;;
+--list-directory) ls -l | grep ^d;;
+--terminal) gnome-terminal;;
+--edit) $2 $3;;
+--kill) kill $(pgrep -fl gedit);;
+--sensor) 	sensors | grep "Core" 
+		sudo hddtemp /dev/sda;;
+--version) 	lsb_release -a;
+		cat /proc/version;							
+		uname -a;;
+--info)		cat /proc/cpuinfo;
+		cat /proc/meminfo;;
+--restart)	sudo reboot;;
+--poweroff)	sudo shutdown -r now;;
+
+*) echo "wrong parameters";;
+esac

@@ -1,0 +1,29 @@
+#!/bin/bash
+case $1 in
+--whoami) 	whoami;
+		w;;
+--currentshell)	ps -p $$;;
+--HOME) 	cd $HOME | pwd;;
+--PATH)		echo $PATH;;
+--folder)	pwd;;
+--whologin)	who -a;;
+--osversion)	lsb_release -a;
+		cat /proc/version;
+		uname -a;;
+--shell)	cat /etc/shells;;
+--mouse)	xinput --list | grep Mouse;
+		sudo apt-get install gpm;
+		sudo dpkg-reconfigure gpm;;
+--info)		sudo smartctl -i /dev/sda;;
+--df)		df;;
+--RAM)		cat /proc/meminfo;
+		free;;
+--PCI)		sudo lshw | grep PCI;;
+--PCIdevice)	lspci;;
+--USB)		lsusb;;
+--VGA)		lspci | grep VGA;;
+--ifconfig)	ifconfig;;
+
+
+*) echo "wrong parameters";;
+esac
